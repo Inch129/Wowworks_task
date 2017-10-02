@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "SansBold";
+    src: url(../fonts/pt-sans-bold.ttf);
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url(../fonts/pt-sans.ttf);
+}
+
+header {
+    font-family: 'Sans', arial;
+    height: 22px;
+    padding: 20px;
+    /*outline: black solid 1px;*/
+    background-color: #222;
+}
+
+.menu {
+    position: relative;
+}
+
+.wrapper_nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.wrapper_info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.menu li {
+    color: #ddd;
+    display: inline-block;
+    padding-right: 40px;
+    font-size: 15px;
+    /* outline: #fff solid 1px;*/
+}
+
+.menu li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.menu li.logo {
+    font-size: 21px;
+    color: #fff;
+}
+
+.menu li.alarm {
+    background: url(../assets/ic-notifications-black-24-px.png) no-repeat;
+    height: 20px;
+}
+
+.menu li.help {
+    background: url(../assets/ic-help-outline-24-px-copy-3.png) no-repeat;
+    height: 20px;
+    display: inline;
+    outline: #fff solid 1px;
+}
