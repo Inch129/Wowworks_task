@@ -1,0 +1,31 @@
+{
+  "name": "wowworks_task",
+  "version": "1.0.0",
+  "description": "Used AngularJs",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "webpack -p",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inch129/Wowworks_task.git"
+  },
+  "keywords": [
+    "wowworks",
+    "angularJs",
+    "git",
+    "webpack"
+  ],
+  "author": "Evgneniy Borzunov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inch129/Wowworks_task/issues"
+  },
+  "homepage": "https://github.com/Inch129/Wowworks_task#readme"
+}

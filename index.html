@@ -12,7 +12,7 @@
     <header>
         <nav class="menu">
 
-            <div class="wrapper_nav">
+            <div class="wrapper__nav">
                 <ul>
                     <li class="logo"><a href="#">Taskon</a></li>
                     <li><a href="#">Задания</a></li>
@@ -22,17 +22,93 @@
                 </ul>
             </div>
 
-            <div class="wrapper_info">
+            <div class="wrapper__info">
                 <ul>
                     <li><a href="#">Баланс</a></li>
-                    <li class="alarm"><a href="#"></a></li>
+                    <li class="alarm"><a href="#">
+                        <img src="assets/ic-notifications-black-24-px.svg" />
+                    </a></li>
                     <li><a href="#">Никита Ласточкин</a></li>
-                    <li class="help"><a href="#"></a></li>
+                    <li class="help"><a href="#">
+                        <img src="assets/ic-help-outline-24-px-copy-3.png" />
+                    </a></li>
                 </ul>
             </div>
         </nav>
     </header>
+    <main>
 
+        <section>
+            <h1>Задания</h1>
+            <nav>
+                <ul class="tabs">
+                    <li><a href="#">Новые</a></li>
+                    <li><a href="#">В работе</a></li>
+                    <li><a href="#">На рассмотрении</a></li>
+                    <li><a href="#">Выполнены</a></li>
+                    <li><a href="#">Отменены</a></li>
+                    <li><a href="#">Черновики</a></li>
+                </ul>
+            </nav>
+            <div class="line"></div>
+        </section>
+        <section>
+            <div class="wrapper">
+                <input type="search" placeholder="Поиск по слову">
+                <label><input type="checkbox"/>Персональное</label>
+                <label><input type="checkbox"/>Ночное</label>
+                <label><input type="checkbox"/>Срочное</label>
+
+                <a href="#"> Никита Ласточкин</a>
+            </div>
+        </section>
+        <section>
+            <table>
+               <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Город</td>
+                    <td>Название</td>
+                    <td>Выполнить до</td>
+                    <td>Сумма</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>12564</td>
+                    <td>Cамара</td>
+                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
+                    <td>13 Августа</td>
+                    <td>10 021р</td>
+                </tr>
+                <tr>
+                    <td>12564</td>
+                    <td>Cамара</td>
+                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
+                    <td>13 Августа</td>
+                    <td>10 021р</td>
+                </tr>
+                <tr>
+                    <td>12564</td>
+                    <td>Cамара</td>
+                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
+                    <td>13 Августа</td>
+                    <td>10 021р</td>
+                </tr>
+                <tr>
+                    <td>12564</td>
+                    <td>Cамара</td>
+                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
+                    <td>13 Августа</td>
+                    <td>10 021р</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+
+    </main>
     <footer></footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
