@@ -25,9 +25,9 @@ app.controller("myController", function ($scope) {
     }
 
 ]
-    $scope.verifyTask = function () {
-        if ($scope.itemId && $scope.city && $scope.name &&
-            $scope.complete && $scope.price) {
+    $scope.verifyTask = function (Data) {
+        if (Data.itemId && Data.city && Data.name &&
+            Data.complete && Data.price) {
             return true;
         }
 
@@ -35,18 +35,19 @@ app.controller("myController", function ($scope) {
     }
 
 
-    $scope.createTask = function () {
-        if ($scope.verifyTask()) {
-            $scope.tasks.push({
-                itemId: $scope.itemId,
-                city: $scope.city,
-                name: $scope.name,
-                complete: $scope.complete,
-                price: $scope.price
-            });
-            console.log($scope.tasks);
+    $scope.createTask = function (Data, addItem) {
+        if ($scope.verifyTask(Data)) {
+            if (addItem.$valid) {
+                $scope.tasks.push({
+                    itemId: Data.itemId,
+                    city: Data.city,
+                    name: Data.name,
+                    complete: Data.complete,
+                    price: Data.price
+                });
+                console.log($scope.tasks);
+            }
         }
-
 
     };
 

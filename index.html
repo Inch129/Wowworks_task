@@ -15,7 +15,7 @@
     <script src="scripts/routers.js"></script>
 </head>
 
-<body ng-controller = "myController">
+<body>
     <header>
         <nav class="menu">
             <div class="wrapper__nav">
@@ -44,7 +44,7 @@
     </header>
     <main>
 
-        <section >
+        <section>
             <h1>Задания</h1>
             <nav>
                 <ul class="tabs">
@@ -57,75 +57,11 @@
                     <hr>
                 </ul>
             </nav>
-             <section>
-            <div class="wrapper">
-                <input type="search" placeholder="Поиск по слову">
-                <label><input type="checkbox"/>Персональное</label>
-                <label><input type="checkbox"/>Ночное</label>
-                <label><input type="checkbox"/>Срочное</label>
 
-                <a href="#"> Никита Ласточкин</a>
-            </div>
-        </section>
-            <button onClick="getElementById('win').removeAttribute('style');" class="button" type="button">Добавить</button>
-            
-            <div id="win" style="display:none;">
-                <div id="win">
-                    <div class="overlay"></div>
-                    <div class="visible">
-                        <h2>Добавить в таблицу</h2>
-                        <div class="content">
-                            <h4>Присвоить ID</h4>
-                            <input class="form-control" name="inputId" ng-model="itemId" type="text" placeholder="ID" required>
-                            <span ng-show="inputId.$invalid">You break my heart</span>
-                            <h4>Какой город</h4>
-                            <input class="form-control" name="inputCity" ng-model="city" type="text" placeholder="Название города" required>
-                            <span ng-show="inputCity.$invalid">You break my heart</span>
-                            <h4>Необходимая услуга</h4>
-                            <input class="form-control" name="inputName" ng-model="name" type="text" placeholder="Наименование услуги" required>
-                            <span ng-show="inputName.$valid">You not break my heart</span>
-                            <h4>Срок</h4>
-                            <input class="form-control" name="inputComplete" ng-model="complete" type="text" placeholder="Срок выполнения" required>
-                            <h4>Стоимость</h4>
-                            <input class="form-control" name="inputPrice" ng-model="price" type="text" placeholder="Стоимость" required>
-                        </div>
-                        <button type="button" onClick="getElementById('win').style.display='none';">Отмена</button>
-                         <button ng-click="createTask()">Добавить в таблицу</button>
-                    </div>
-                </div>
-        </section>
-        <ng-view></ng-view>
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>Город</td>
-                        <td>Название</td>
-                        <td>Выполнить до</td>
-                        <td>Сумма</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="task in tasks">
-                        <td>{{task.itemId}}</td>
-                        <td>{{task.city}}</td>
-                        <td>{{task.name}}</td>
-                        <td>{{task.complete}}</td>
-                        <td>{{task.price | priceFilter}}</td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-        </section>
-          
-        
-        
+            <ng-view></ng-view>
 
     </main>
     <footer></footer>
-
 
 </body>
 

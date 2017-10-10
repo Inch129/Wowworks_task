@@ -88,8 +88,8 @@ section ul.tabs li {
     font-size: 17px;
 }
 
-section ul.tabs li::after {
-    content: '2';
+/*section ul.tabs li::after {
+    content: attr(data);
     display: inline-block;
     text-align: center;
     margin-left: 10px;
@@ -102,16 +102,24 @@ section ul.tabs li::after {
     border: 1px solid #999;
     background: #fff;
     color: #999;
+    
 }
 
 section ul.tabs li:hover::after {
-    content: '2';
+    content: attr({{1+2}});
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0px 1px 3px 2px;
+    font-size: 12px;
+    line-height: 1.5;
+    height: 15px;
+    min-width: 17px;
     border-radius: 100%;
     background: #ff6633;
     color: #fff;
     border: none;
 }
-
+*/
 section ul.tabs li a {
     position: relative;
     text-decoration: none;
@@ -174,7 +182,12 @@ section ul.tabs li a:hover {
 	color: #555;
 }
 
+ng-view {
+    padding: 15px;
+}
+
 .button {
+ margin-bottom: 10px;
  position: absolute;
  margin:0 auto;
  text-decoration:none; 
@@ -248,6 +261,13 @@ section ul.tabs li a:hover {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	background: WhiteSmoke;
+    padding: 20px;
+    align-content: center;
+    text-align:center;   
+}
+
+.addBtn {
+    margin: 20px;
 }
 
 /*section hr {
@@ -303,6 +323,7 @@ section table td {
     padding: 20px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    white-space: nowrap;
 }
 
 
