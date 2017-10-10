@@ -36,18 +36,17 @@ app.controller("myController", function ($scope) {
 
 
     $scope.createTask = function (Data, addItem) {
-        if ($scope.verifyTask(Data)) {
-            if (addItem.$valid) {
-                $scope.tasks.push({
-                    itemId: Data.itemId,
-                    city: Data.city,
-                    name: Data.name,
-                    complete: Data.complete,
-                    price: Data.price
-                });
-                console.log($scope.tasks);
-            }
+        if (addItem.$valid) {
+            $scope.tasks.push({
+                itemId: Data.itemId,
+                city: Data.city,
+                name: Data.name,
+                complete: Data.complete,
+                price: Data.price
+            });
+            console.log($scope.tasks);
         }
+
 
     };
 

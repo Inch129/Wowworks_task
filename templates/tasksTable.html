@@ -1,23 +1,31 @@
-<h2>
-    Добавить в таблицу</h2>
-    <form name = "addItem">
-   <div class="content">
-    <h4>Присвоить ID</h4>
-    <input class="form-control" name="inputId" ng-model="Data.itemId" type="text" placeholder="ID" required>
-    <span ng-show="inputId.$invalid">You break my heart</span>
-    <h4>Какой город</h4>
-    <input class="form-control" name="inputCity" ng-model="Data.city" type="text" placeholder="Название города" required>
-    <span ng-show="inputCity.$invalid">You break my heart</span>
-    <h4>Необходимая услуга</h4>
-    <input class="form-control" name="inputName" ng-model="Data.name" type="text" placeholder="Наименование услуги" required>
-    <span ng-show="inputName.$valid">You not break my heart</span>
-    <h4>Срок</h4>
-    <input class="form-control" name="inputComplete" ng-model="Data.complete" type="text" placeholder="Срок выполнения" required>
-    <h4>Стоимость</h4>
-    <input class="form-control" name="inputPrice" ng-model="Data.price" type="text" placeholder="Стоимость" required>
-    <br>
-    <button class = "addBtn" ng-click="createTask(Data, addItem)">Добавить в таблицу</button>
-    </form>
+<h2>Добавить в таблицу</h2>
+<form name="addItem">
+    <div class="content">
+        <h4>Присвоить ID</h4>
+        <input class="form-control" name="inputId" ng-model="Data.itemId" type="text" placeholder="ID" required>
+        <span ng-show="inputId.$invalid">You break my heart</span>
+        <h4>Какой город</h4>
+        <input class="form-control" name="inputCity" ng-model="Data.city" type="text" placeholder="Название города" required>
+        <span ng-show="inputCity.$invalid">You break my heart</span>
+        <h4>Необходимая услуга</h4>
+        <input class="form-control" name="inputName" ng-model="Data.name" type="text" placeholder="Наименование услуги" required>
+        <span ng-show="inputName.$valid">You not break my heart</span>
+        <h4>Срок</h4>
+        <input class="form-control" name="inputComplete" ng-model="Data.complete" type="text" placeholder="Срок выполнения" required>
+        <h4>Стоимость</h4>
+        <input class="form-control" name="inputPrice" ng-model="Data.price" type="text" placeholder="Стоимость" required>
+        <br>
+        <h4>Фильтр:</h4>
+        <select name="filterList">
+            <option disabled>Не обязательное поле</option>
+            <option value = "none">Нет</option>
+			<option value = "personal">Персональное</option>
+			<option value = "night">Ночное</option>
+			<option value = "urgent">Срочное</option>
+		</select>
+        <br>
+        <button class="addBtn" ng-click="createTask(Data, addItem)">Добавить в таблицу</button>
+</form>
 
 </div>
 </div>
@@ -56,4 +64,3 @@
     </table>
 
 </section>
-        

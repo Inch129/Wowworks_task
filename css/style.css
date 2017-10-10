@@ -270,16 +270,6 @@ ng-view {
     margin: 20px;
 }
 
-/*section hr {
-    opacity: 0.5;
-  height: .25rem;
-  width: 25%;
-  margin: 0;
-  background: tomato;
-  border: none;
-  transition: .3s ease-in-out;
-}*/
-
 section div.wrapper input {
     margin: 10px 10px;
     opacity: 0.8;
