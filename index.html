@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru" ng-app>
+<html lang="ru" ng-app="wowworksApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Wowworks task</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/routers.js"></script>
 </head>
 
-<body>
+<body ng-controller = "myController">
     <header>
         <nav class="menu">
-
             <div class="wrapper__nav">
                 <ul>
                     <li class="logo"><a href="#">Taskon</a></li>
@@ -38,21 +44,20 @@
     </header>
     <main>
 
-        <section>
+        <section >
             <h1>Задания</h1>
             <nav>
                 <ul class="tabs">
-                    <li><a href="#">Новые</a></li>
-                    <li><a href="#">В работе</a></li>
-                    <li><a href="#">На рассмотрении</a></li>
-                    <li><a href="#">Выполнены</a></li>
-                    <li><a href="#">Отменены</a></li>
-                    <li><a href="#">Черновики</a></li>
+                    <li><a href="#!/new">Новые</a></li>
+                    <li><a href="#!/underway">В работе</a></li>
+                    <li><a href="#!/inProcessing">На рассмотрении</a></li>
+                    <li><a href="#!/done">Выполнены</a></li>
+                    <li><a href="#!/decline">Отменены</a></li>
+                    <li><a href="#!/draft">Черновики</a></li>
+                    <hr>
                 </ul>
             </nav>
-            <div class="line"></div>
-        </section>
-        <section>
+             <section>
             <div class="wrapper">
                 <input type="search" placeholder="Поиск по слову">
                 <label><input type="checkbox"/>Персональное</label>
@@ -62,56 +67,66 @@
                 <a href="#"> Никита Ласточкин</a>
             </div>
         </section>
+            <button onClick="getElementById('win').removeAttribute('style');" class="button" type="button">Добавить</button>
+            
+            <div id="win" style="display:none;">
+                <div id="win">
+                    <div class="overlay"></div>
+                    <div class="visible">
+                        <h2>Добавить в таблицу</h2>
+                        <div class="content">
+                            <h4>Присвоить ID</h4>
+                            <input class="form-control" name="inputId" ng-model="itemId" type="text" placeholder="ID" required>
+                            <span ng-show="inputId.$invalid">You break my heart</span>
+                            <h4>Какой город</h4>
+                            <input class="form-control" name="inputCity" ng-model="city" type="text" placeholder="Название города" required>
+                            <span ng-show="inputCity.$invalid">You break my heart</span>
+                            <h4>Необходимая услуга</h4>
+                            <input class="form-control" name="inputName" ng-model="name" type="text" placeholder="Наименование услуги" required>
+                            <span ng-show="inputName.$valid">You not break my heart</span>
+                            <h4>Срок</h4>
+                            <input class="form-control" name="inputComplete" ng-model="complete" type="text" placeholder="Срок выполнения" required>
+                            <h4>Стоимость</h4>
+                            <input class="form-control" name="inputPrice" ng-model="price" type="text" placeholder="Стоимость" required>
+                        </div>
+                        <button type="button" onClick="getElementById('win').style.display='none';">Отмена</button>
+                         <button ng-click="createTask()">Добавить в таблицу</button>
+                    </div>
+                </div>
+        </section>
+        <ng-view></ng-view>
         <section>
             <table>
-               <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Город</td>
-                    <td>Название</td>
-                    <td>Выполнить до</td>
-                    <td>Сумма</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Город</td>
+                        <td>Название</td>
+                        <td>Выполнить до</td>
+                        <td>Сумма</td>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>12564</td>
-                    <td>Cамара</td>
-                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
-                    <td>13 Августа</td>
-                    <td>10 021р</td>
-                </tr>
-                <tr>
-                    <td>12564</td>
-                    <td>Cамара</td>
-                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
-                    <td>13 Августа</td>
-                    <td>10 021р</td>
-                </tr>
-                <tr>
-                    <td>12564</td>
-                    <td>Cамара</td>
-                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
-                    <td>13 Августа</td>
-                    <td>10 021р</td>
-                </tr>
-                <tr>
-                    <td>12564</td>
-                    <td>Cамара</td>
-                    <td>Подключение провода от клеемной коробки пожарной сигнализации к расцепителю, проверить работоспособность</td>
-                    <td>13 Августа</td>
-                    <td>10 021р</td>
-                </tr>
+                    <tr ng-repeat="task in tasks">
+                        <td>{{task.itemId}}</td>
+                        <td>{{task.city}}</td>
+                        <td>{{task.name}}</td>
+                        <td>{{task.complete}}</td>
+                        <td>{{task.price | priceFilter}}</td>
+                    </tr>
+
                 </tbody>
             </table>
 
         </section>
-
+          
+        
+        
 
     </main>
     <footer></footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
 </body>
 
 </html>
